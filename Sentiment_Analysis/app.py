@@ -37,21 +37,6 @@ user_text = st.text_area(
     height=150
 )
 
-#Mapping
-label_names = {
-    0: "Negative 😞",
-    1: "Neutral 😐",
-    2: "Positive 😊",
-    3: "Irrelevant ❓"
-}
-
-label_colors = {
-    0: "red",
-    1: "gray",
-    2: "green",
-    3: "blue"
-}
-
 #Button
 if st.button("Analyze Sentiment"):
     if not user_text.strip():
@@ -92,9 +77,9 @@ if st.button("Analyze Sentiment"):
                 st.progress(float(p))
                 st.write(f"**{label_names[idx]}** → `{p:.3f}`")
 
-        st.markdown("---")
         st.subheader(" Preprocessed Text")
         st.write(cleaned)
+
 
 
 
