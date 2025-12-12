@@ -3,8 +3,12 @@ import pickle
 import numpy as np
 from src.preprocess import clean_text
 
-MODEL_PATH = "models/svm.pkl"
-TFIDF_PATH = "models/tfidf.pkl"
+import os
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = BASE + "/models/svm.pkl"
+TFIDF_PATH = BASE + "/models/tfidf.pkl"
+
 
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
@@ -91,5 +95,6 @@ if st.button("Analyze Sentiment"):
         st.markdown("---")
         st.subheader(" Preprocessed Text")
         st.write(cleaned)
+
 
 
