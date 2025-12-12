@@ -58,7 +58,7 @@ if st.button("Analyze Sentiment"):
         #Prediction
         st.subheader("🔍 Prediction Result:")
 
-        sentiment_text = label_names[prediction]
+        sentiment_text = prediction
         color = label_colors[prediction]
 
         st.markdown(
@@ -79,6 +79,7 @@ if st.button("Analyze Sentiment"):
 
         st.subheader(" Preprocessed Text")
         st.write(cleaned)
+
 
 
 
