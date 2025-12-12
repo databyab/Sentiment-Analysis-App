@@ -54,7 +54,12 @@ if st.button("Analyze Sentiment"):
             probs = model.predict_proba(vector)[0]
         except:
             probs = None
-
+        label_colors = {
+            "Positive": "green",
+            "Neutral": "gray",
+            "Negative": "red",
+            "Irrelevant": "blue"
+        }
         #Prediction
         st.subheader("🔍 Prediction Result:")
 
@@ -79,6 +84,7 @@ if st.button("Analyze Sentiment"):
 
         st.subheader(" Preprocessed Text")
         st.write(cleaned)
+
 
 
 
